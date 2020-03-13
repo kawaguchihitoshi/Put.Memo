@@ -48,36 +48,76 @@
     }
   }
 
-
-  .contents{
-    padding: 0 60px;
-    height:100%;
-    width: 100vw;
-    overflow-y: scroll;
-    .content{
-      height: 100%;
-      padding-top: 60px;
-      .word{
-        background-color: white;
-        padding: 15px;
-        margin: 10px;
-        display: inline-block;
-        font-size: 30px;
-        font-weight: bold;
-      }
-      .meaning{
-        background-color: white;
-        padding: 10px;
-        margin: 10px;
-        font-size: 20px;
-        &__mean{
-          color: #404040;
+  .message{
+    .contents{
+      padding: 0 350px;
+      height:100%;
+      width: 100vw;
+      overflow-y: scroll;
+      .content{
+        height: 100%;
+        padding-top: 60px;
+        .words{
+          background-color: white;
+          padding: 15px;
+          margin: 10px;
+          display: inline-block;
+          font-size: 30px;
           font-weight: bold;
-
+          width: 100%;
+          &__word{
+            &__account{
+              width: 100％;
+              font-size: 20px;
+              font-weight: normal;
+            }
+            &__tag{
+              font-size: 20px;
+              font-weight: normal;
+            }
+          }
         }
-        &__block{
-          display: flex;
-          justify-content: start;
+        .meaning{
+          background-color: white;
+          display: inline-block;
+          padding: 10px;
+          margin: 10px;
+          font-size: 20px;
+          width: 100%;
+          &__mean{
+            &__word{
+              width: 100%;
+            }
+            &__text{
+              width: 100%;
+            }
+            &__url{
+              margin-top: 10px;
+              width: 100%;
+            }
+            &__img{
+              margin-top: 10px;
+              width: 100%;
+            }
+            &__send{
+              background-color: #38aef0;
+              color: white;
+              padding: 10px;
+              margin-top: 20px;
+            }
+          }
+          &__block{
+            display: flex;
+            justify-content: start;
+            margin-top: 14px;
+            &__evaluation{
+              font-size: 15px;
+            }
+            &__number{
+              font-size: 15px;
+              margin-left: 5px;
+            }
+          }
         }
       }
     }
@@ -92,6 +132,7 @@
     color: #fff;
     width: 100vw;
     height: 250px;
+    
     .title{
       .slogan{
         padding: 0 22px;

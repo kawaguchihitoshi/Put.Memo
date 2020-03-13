@@ -1,0 +1,16 @@
+.message{data: {message: {id: message.id}}}
+  .contents
+    .content
+      .words
+        .words__word
+          = message.title
+          .words__word__account
+          .words__word__tag
+            = message.tag_list
+      .meaning
+        .meaning__mean
+          .meaning__mean__text
+            - if message.content.present?
+              %p.lower-message__content
+                = message.content
+            = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

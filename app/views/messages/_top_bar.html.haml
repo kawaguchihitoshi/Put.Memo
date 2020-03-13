@@ -3,14 +3,17 @@
     .main
       .main__item
         .main__item__title
-        = link_to messages_index_path,target: "_self" do
-          = image_tag 'logo.jpg',:width => '150', :height => '100'
+          = link_to '/',target: "_self" do
+            = image_tag 'logo.jpg',:width => '150', :height => '100'
         .main__item__search
           検索バー
       .main__block
         .main__block__test
-          暗記テスト
+          = link_to "/messages/:id",target: "_self" do
+            = '暗記テスト'
         .main__block__card
-          カードを作る
+          = link_to '/messages/new',target: "_self" do
+            = 'カードを作る'
         .main__block__account
-          アカウント
+          = link_to edit_user_path(current_user) do
+            = current_user.name

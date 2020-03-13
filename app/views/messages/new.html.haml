@@ -1,0 +1,17 @@
+.wrapper
+  = render "top_bar"
+  .contents
+    .content
+      .meaning
+        .meaning__mean
+          単語
+          = form_for @message do |f|
+            = f.text_field :title, class: 'meaning__mean__word', placeholder: 'word'
+            = f.text_field :tag_list, class: 'words__word__tag', placeholder: 'tag'
+            意味
+            = f.text_area :content,rows: 10, class: 'meaning__mean__text', placeholder: 'text'
+            画像
+            = f.label :image do
+              = f.file_field :image,class:"meaning__mean__img"
+            = f.submit "Send", class: 'meaning__mean__send'
+  = render "bottom_bar"
