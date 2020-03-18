@@ -1,19 +1,10 @@
 .wrapper
   = render "top_bar"
   .message
-    .contents
-      .content
-        .words
-          .words__word
-            .words__word__account
-              アカウント
-            .words__word__tag
-              ＃rails
-        .meaning
-          .meaning__mean
-            .meaning__mean__text
-              意味
-            .meaning__mean__img
-              画像
-          
+    .col.s6
+      #tab1.card
+        .blue-grey.darken-1
+          %ul.card
+            - @results.each do |result|
+              = render @message
   = render "bottom_bar"
