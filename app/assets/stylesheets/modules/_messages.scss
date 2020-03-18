@@ -30,7 +30,15 @@
             
           }
           &__search{
-
+            .tabContents {
+              display: none;
+              text-decoration: none;
+            }
+            .tabContents.active {
+              display: block;
+              color: white;
+              text-decoration: none;
+            }
           }
         }
         &__block{

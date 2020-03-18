@@ -6,7 +6,23 @@
           = link_to '/',target: "_self" do
             = image_tag 'logo.jpg',:width => '150', :height => '100'
         .main__item__search
-          検索バー
+          %ul.tab
+            %li.active
+              %a{:href => "#tab1"} キーワード検索
+            %li
+              %a{:href => "#tab2"} タグ検索
+          #tab1.tabContents.active
+            = search_form_for @search,url: root_path do |f|
+              .form-group
+                %i.material-icons.prefix キーワード
+                = f.search_field :content_cont, class: 'form-control', placeholder: 'キーワードで検索'
+                = f.submit 'Search',:class=> "btn waves-effect waves-light"
+          #tab2.tabContents
+            = search_form_for @search,url: root_path do |f|
+              .form-groups
+                %i.material-icons.prefix タブ
+                = f.search_field :tags_name_cont, class: 'form-control', placeholder: 'キーワードで検索'
+                = f.submit 'Search',:class=> "btn waves-effect waves-light"
       .main__block
         .main__block__test
           = link_to "/messages/:id",target: "_self" do

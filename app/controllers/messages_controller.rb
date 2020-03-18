@@ -1,8 +1,10 @@
 class MessagesController < ApplicationController
+  before_action :set_tweet, only: [:edit, :show]
+  before_action :move_to_index, except: [:index, :show]
   def index
     @message = Message.all
     @search = Message.ransack(params[:q])
-    @message = @search.result
+    @results = @search.result
   end
 
   def new
@@ -31,5 +33,13 @@ class MessagesController < ApplicationController
   private
   def message_params
     params.require(:message).permit(:title, :content,:image,:tag_list ).merge(user_id: current_user.id)
+  end
+
+  def set_tweet
+    @message = Message.find(params[:id]) 
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end
