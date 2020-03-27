@@ -6,7 +6,8 @@
 |name|string|null: false,index: true|
 ### Association
 - has_many :messages
-- belongs_to :
+- has_many :likes
+- has_many :messages ,through: :likes
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -39,7 +40,7 @@
 - belongs_to :message
 - belongs_to :tag
 
-## likeテーブル
+## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
